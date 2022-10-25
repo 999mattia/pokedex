@@ -1,5 +1,6 @@
 import styles from "../styles/contact.module.css"
 import Head from 'next/head'
+import Footer from "../components/Footer"
 
 export default function Contact() {
     return (
@@ -9,7 +10,8 @@ export default function Contact() {
             </Head>
             <center>
                 <h2>Contact</h2>
-                <div className={styles.filler}></div>
+                <div className={styles.footer}>
+                    <Footer /></div>
             </center>
         </>
     )
