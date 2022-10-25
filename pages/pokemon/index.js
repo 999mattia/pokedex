@@ -4,60 +4,59 @@ import styles from "../../styles/Home.module.css";
 import { getAll } from "../../utils/pokeApi";
 import Pokemon from "../../components/Pokemon";
 
-export default function AllPokemon({}) {
-  //const [pokemon, setPokemon] = useState([])
-  const pokemon = [
-    {
-      name: "Glumanda",
-      type: "fire",
-      img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-    },
-    {
-      name: "Glumanda",
-      type: "fire",
-      img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-    },
-    {
-      name: "Glumanda",
-      type: "fire",
-      img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-    },
-    {
-      name: "Glumanda",
-      type: "fire",
-      img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-    },
-    {
-      name: "Glumanda",
-      type: "fire",
-      img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-    },
-    {
-      name: "Glumanda",
-      type: "fire",
-      img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-    },
-    {
-      name: "Glumanda",
-      type: "fire",
-      img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-    },
-    {
-      name: "Glumanda",
-      type: "fire",
-      img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-    },
-    {
-      name: "Glumanda",
-      type: "fire",
-      img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-    },
-    {
-      name: "Glumanda",
-      type: "fire",
-      img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
-    },
-  ];
+export default function AllPokemon({ pokemon }) {
+  // const pokemon = [
+  //   {
+  //     name: "Glumanda",
+  //     type: "fire",
+  //     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+  //   },
+  //   {
+  //     name: "Glumanda",
+  //     type: "fire",
+  //     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+  //   },
+  //   {
+  //     name: "Glumanda",
+  //     type: "fire",
+  //     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+  //   },
+  //   {
+  //     name: "Glumanda",
+  //     type: "fire",
+  //     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+  //   },
+  //   {
+  //     name: "Glumanda",
+  //     type: "fire",
+  //     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+  //   },
+  //   {
+  //     name: "Glumanda",
+  //     type: "fire",
+  //     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+  //   },
+  //   {
+  //     name: "Glumanda",
+  //     type: "fire",
+  //     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+  //   },
+  //   {
+  //     name: "Glumanda",
+  //     type: "fire",
+  //     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+  //   },
+  //   {
+  //     name: "Glumanda",
+  //     type: "fire",
+  //     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+  //   },
+  //   {
+  //     name: "Glumanda",
+  //     type: "fire",
+  //     img: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/4.png",
+  //   },
+  // ];
 
   return (
     <>
@@ -68,7 +67,7 @@ export default function AllPokemon({}) {
       <div className={styles.container}>
         <center>
           {pokemon.map((i) => {
-            return <Pokemon name={i.name} type={i.type} img={i.img} />;
+            return <Pokemon key={i.name} name={i.name} type={i.types[0].type.name} img={i.sprites.front_default} />;
           })}
         </center>
       </div>
@@ -76,12 +75,12 @@ export default function AllPokemon({}) {
   );
 }
 
-// export async function getStaticProps() {
-//   const pokemon = await getAll()
+export async function getStaticProps() {
+  const pokemon = await getAll()
 
-//   return {
-//     props: {
-//       pokemon,
-//     }
-//   }
-// }
+  return {
+    props: {
+      pokemon,
+    }
+  }
+}
