@@ -43,7 +43,7 @@ export default function AllPokemon({ pokemon }) {
             onChange={handleChange}
             type="text"
             name="query"
-            placeholder="Search Product"
+            placeholder="Search Pokemon"
             value={query}
           ></input>
           {pokemonToRender.map((i) => {
