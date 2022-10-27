@@ -17,7 +17,7 @@ export default function Header() {
         <>
             <div className={styles.container}>
                 <center>
-                    {menu ? <><h3 className={styles.topLink}>Test</h3><h3>Test2</h3></> : null}
+                    {menu ? <><Link href="/"><h3 className={styles.topLink}>Home</h3></Link><Link href="/pokemon"><h3>All Pokemon</h3></Link><Link href="/contact"><h3>Impressum/Contact</h3></Link></> : null}
                     <a onClick={() => handleClick()}>
                         <img src="/pokeball.svg" className={styles.pokeball} /></a>
                 </center>
