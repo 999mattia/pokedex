@@ -31,8 +31,8 @@ export default function PokemonDetails() {
 
     return (<>
         {pokemon ?
-            <center><div className={styles.container} style={{ borderColor: color }}><h2>{pokemon.name}</h2> <h3>type: {pokemon.types[0].type.name}</h3> <h3>height: {pokemon.height}</h3> <h3>weight: {pokemon.weight}</h3>
-                <Carousel>
+            <center><div className={styles.container} style={{ borderColor: color }}><h2>{pokemon.name}</h2> <h4>type: {pokemon.types[0].type.name}</h4> <h4>height: {pokemon.height}</h4> <h4>weight: {pokemon.weight}</h4>
+                <Carousel showStatus={false} showThumbs={false}>
                     <div>
                         <img src={pokemon.sprites.front_default} />
                         <p className="front"></p>
