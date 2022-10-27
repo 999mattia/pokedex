@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { getByName } from '../../utils/pokeApi';
 import styles from "../../styles/[id].module.css"
 import getColorByType from "../../utils/colorType"
+import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
+import { Carousel } from 'react-responsive-carousel';
 
 export default function PokemonDetails() {
     const router = useRouter();
@@ -29,5 +31,16 @@ export default function PokemonDetails() {
 
     return (<>
         {pokemon ?
-            <center><div className={styles.container} style={{ borderColor: color }}><h2>{pokemon.name}</h2> {pokemon.id} </div></center> : null}</>)
+            <center><div className={styles.container} style={{ borderColor: color }}><h2>{pokemon.name}</h2> <h3>type: {pokemon.types[0].type.name}</h3> <h3>height: {pokemon.height}</h3> <h3>weight: {pokemon.weight}</h3>
+                <Carousel>
+                    <div>
+                        <img src={pokemon.sprites.front_default} />
+                        <p className="front"></p>
+                    </div>
+                    <div>
+                        <img src={pokemon.sprites.back_default} />
+                        <p className="back"></p>
+                    </div>
+
+                </Carousel></div></center> : null}</>)
 }
