@@ -12,7 +12,9 @@ export default function Home({ }) {
       <div className={styles.container}>
 
         <div className={styles.footer}>
-          <Footer /></div>
+          <Footer />
+        </div>\
+
       </div>
     </>
   )
