@@ -1,6 +1,9 @@
 .searchbar {
   margin-top: 2rem;
   margin-bottom: 2rem;
+  width: 15rem;
+  height: 2.5rem;
+  border-radius: 5px;
   background-color: transparent;
   color: black;
   border: none;
@@ -11,8 +14,3 @@
 .searchbar:focus {
   border: none;
 }
-
-/* .footer {
-  position: sticky;
-  bottom: 0px;
-} */

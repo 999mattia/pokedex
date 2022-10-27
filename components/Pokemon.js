@@ -35,6 +35,12 @@ export default function Pokemon({ name, type, img }) {
             color = "#73cebe"
         } else if (type == "dragon") {
             color = "#086cc2"
+        } else if (type == "flying") {
+            color = "#93aade"
+        } else if (type == "steel") {
+            color = "#598fa1"
+        } else if (type == "dark") {
+            color = "#5b5265"
         }
     }
 
