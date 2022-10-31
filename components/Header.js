@@ -15,14 +15,15 @@ export default function Header() {
 
     return (
         <>
-            <div className={styles.container}>
+            <div className={menu ? styles.containerOpen : styles.container}>
                 <center>
-                    {menu ? <><Link href="/" ><h3 className={styles.topLink}>Home</h3></Link><Link href="/pokemon"><h3>All Pokemon</h3></Link><Link href="/contact"><h3>Impressum/Contact</h3></Link></> : null}
+                    <Link href="/" ><h3 className={styles.topLink}>Home</h3></Link><Link href="/pokemon"><h3>All Pokemon</h3></Link><Link href="/contact"><h3>Impressum/Contact</h3></Link>
                     <a onClick={() => handleClick()}>
                         <img src="/pokeball.svg" className={styles.pokeball} /></a>
                 </center>
             </div>
 
         </>
+
     )
 }

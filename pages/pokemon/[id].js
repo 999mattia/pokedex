@@ -1,10 +1,7 @@
-import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
 import { getByName, getAll } from '../../utils/pokeApi';
 import styles from "../../styles/[id].module.css"
 import getColorByType from "../../utils/colorType"
-import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
-import { Carousel } from 'react-responsive-carousel';
 
 
 

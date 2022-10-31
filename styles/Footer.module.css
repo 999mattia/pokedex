@@ -6,4 +6,5 @@
   border-top-right-radius: 15px;
   box-shadow: 0 10px 20px -5px rgba(115, 115, 115, 0.75),
     -10px 0 20px -5px rgba(115, 115, 115, 0.75);
+  padding-top: 15px;
 }

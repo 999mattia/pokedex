@@ -1,24 +1,24 @@
 .searchbar {
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-  width: 15rem;
-  height: 2.5rem;
-  border-radius: 5px;
-  background-color: transparent;
-  color: black;
-  border: none;
-  box-shadow: 0 10px 20px -5px rgba(115, 115, 115, 0.75),
-    -10px 0 20px -5px rgba(115, 115, 115, 0.75);
+	margin-top: 2rem;
+	margin-bottom: 2rem;
+	width: 15rem;
+	height: 2.5rem;
+	border-radius: 5px;
+	background-color: transparent;
+	color: black;
+	border: none;
+	box-shadow: 0 10px 20px -5px rgba(115, 115, 115, 0.75),
+		-10px 0 20px -5px rgba(115, 115, 115, 0.75);
 }
 
 .searchbar:focus {
-  border: none;
+	border: none;
 }
 
 .pokemonContainer {
-  display: flex;
-  justify-content: space-around;
-  gap: 4em;
-  flex-direction: row;
-  flex-wrap: wrap;
+	display: flex;
+	justify-content: space-around;
+	gap: 15px;
+	flex-direction: row;
+	flex-wrap: wrap;
 }

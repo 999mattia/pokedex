@@ -6,68 +6,68 @@ import styles from "../../styles/AllPokemon.module.css"
 import Footer from "../../components/Footer"
 
 export default function AllPokemon({ pokemon }) {
-  const [pokemonToRender, setPokemonToRender] = useState([]);
-  const [query, setQuery] = useState("");
+	const [pokemonToRender, setPokemonToRender] = useState([]);
+	const [query, setQuery] = useState("");
 
-  useEffect(() => {
-    const filterPokemon = () => {
-      if (query.trim() === "") {
-        setPokemonToRender(pokemon);
-      } else {
-        const filtered = pokemon.filter((pokemon) =>
-          pokemon.name.toLowerCase().includes(query.toLowerCase())
+	useEffect(() => {
+		const filterPokemon = () => {
+			if (query.trim() === "") {
+				setPokemonToRender(pokemon);
+			} else {
+				const filtered = pokemon.filter((pokemon) =>
+					pokemon.name.toLowerCase().includes(query.toLowerCase())
 
-        );
-        setPokemonToRender(filtered);
-      }
-    };
-    filterPokemon();
-  }, [query, pokemon]);
+				);
+				setPokemonToRender(filtered);
+			}
+		};
+		filterPokemon();
+	}, [query, pokemon]);
 
-  const handleChange = (e) => {
-    const target = e.target;
-    const value = target.value;
-    setQuery(value);
-  };
+	const handleChange = (e) => {
+		const target = e.target;
+		const value = target.value;
+		setQuery(value);
+	};
 
-  return (
-    <>
-      <Head>
-        <title>Pokedex | All</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-      <div className={styles.container}>
-        <center>
-          <input
-            className={styles.searchbar}
-            onChange={handleChange}
-            type="text"
-            name="query"
-            placeholder="Search Pokemon"
-            value={query}
-          ></input>
-          <div className={styles.pokemonContainer}>
-            {pokemonToRender.map((i) => {
-              return <Pokemon key={i.name} name={i.name} type={i.types[0].type.name} img={i.sprites.front_default} />;
-            })}
-          </div>
-          <div className={styles.footer}>
-            <Footer />
-          </div>
-        </center>
-      </div>
-    </>
-  );
+	return (
+		<>
+			<Head>
+				<title>Pokedex | All</title>
+				<link rel="icon" href="/favicon.ico" />
+			</Head>
+			<div className={styles.container}>
+				<center>
+					<input
+						className={styles.searchbar}
+						onChange={handleChange}
+						type="text"
+						name="query"
+						placeholder="Search Pokemon"
+						value={query}
+					></input>
+					<div className={styles.pokemonContainer}>
+						{pokemonToRender.map((i) => {
+							return <Pokemon key={i.name} name={i.name} type={i.types[0].type.name} img={i.sprites.front_default} />;
+						})}
+					</div>
+					<div className={styles.footer}>
+						<Footer />
+					</div>
+				</center>
+			</div>
+		</>
+	);
 }
 
 export async function getStaticProps() {
-  const pokemon = await getAll()
+	const pokemon = await getAll()
 
-  return {
-    props: {
-      pokemon,
-    }
-  }
+	return {
+		props: {
+			pokemon,
+		}
+	}
 }
 
 

@@ -5,6 +5,8 @@ export async function getAll() {
         const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${i}/`)
         const data = await res.json()
         pokemon[i - 1] = data
+
+        console.log(`Loaded pokemon ${i}`)
     }
 
     return pokemon
