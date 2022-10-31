@@ -16,4 +16,9 @@
 
 .pokeball {
   width: 100px;
+  cursor: pointer;
+}
+
+.link {
+  cursor: pointer;
 }

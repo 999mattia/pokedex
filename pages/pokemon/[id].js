@@ -1,27 +1,15 @@
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react';
-import { getByName } from '../../utils/pokeApi';
+import { getByName, getAll } from '../../utils/pokeApi';
 import styles from "../../styles/[id].module.css"
 import getColorByType from "../../utils/colorType"
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
 
-export default function PokemonDetails() {
-    const router = useRouter();
-    const { id } = router.query;
 
-    const [pokemon, setPokemon] = useState(null)
+
+export default function PokemonDetails({ pokemon }) {
     const [color, setColor] = useState("transparent")
-
-    useEffect(() => {
-        const getPokemon = async () => {
-            let res = await getByName(id)
-            setPokemon(res)
-        }
-        if (id != undefined) {
-            getPokemon()
-        }
-    }, [id])
 
     useEffect(() => {
         if (pokemon != null) {
@@ -42,4 +30,28 @@ export default function PokemonDetails() {
                 </div>
 
             </div></center> : null}</>)
+}
+
+export const getStaticPaths = async () => {
+    const data = await getAll()
+
+    const paths = data.map(pokemon => {
+        return {
+            params: { id: pokemon.name }
+        }
+    })
+
+    return {
+        paths: paths,
+        fallback: false
+    }
+}
+
+export const getStaticProps = async (context) => {
+    const id = context.params.id
+    const data = await getByName(id)
+
+    return {
+        props: { pokemon: data }
+    }
 }
