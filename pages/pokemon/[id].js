@@ -7,6 +7,7 @@ import getColorByType from "../../utils/colorType"
 
 export default function PokemonDetails({ pokemon }) {
     const [color, setColor] = useState("transparent")
+    const [image, setImage] = useState(1)
 
     useEffect(() => {
         if (pokemon != null) {
@@ -14,18 +15,25 @@ export default function PokemonDetails({ pokemon }) {
         }
     }, [pokemon])
 
+    const changeImage = () => {
+        if (image == 1) {
+            setImage(2)
+        } else {
+            setImage(1)
+        }
+    }
+
     return (<>
         {pokemon ?
             <center><div className={styles.container} style={{ borderColor: color }}><h2>{pokemon.name}</h2> <h4>type: {pokemon.types[0].type.name}</h4> <h4>height: {pokemon.height}</h4> <h4>weight: {pokemon.weight}</h4>
-                <div>
-                    <img src={pokemon.sprites.front_default} />
+                {image == 1 ? <a onClick={() => changeImage()}>
+                    <img src={pokemon.sprites.front_default} className={styles.img} />
                     <p className="front"></p>
-                </div>
-                <div>
-                    <img src={pokemon.sprites.back_default} />
+                </a> : <a onClick={() => changeImage()}>
+                    <img src={pokemon.sprites.back_default} className={styles.img} />
                     <p className="back"></p>
-                </div>
-
+                </a>}
+                (Click on image to switch image)
             </div></center> : null}</>)
 }
 

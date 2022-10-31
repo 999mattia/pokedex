@@ -1,23 +1,12 @@
 .container {
 	position: sticky;
-	transform: translateY(-145px);
+	width: 100vw;
 	background-color: white;
 	border-bottom-left-radius: 15px;
 	border-bottom-right-radius: 15px;
 	box-shadow: 0 10px 20px -5px rgba(115, 115, 115, 0.75),
 		-10px 0 20px -5px rgba(115, 115, 115, 0.75);
-	transition: all 0.5s ease-in-out;
-}
-
-.containerOpen {
-	position: sticky;
-	top: 0px;
-	background-color: white;
-	border-bottom-left-radius: 15px;
-	border-bottom-right-radius: 15px;
-	box-shadow: 0 10px 20px -5px rgba(115, 115, 115, 0.75),
-		-10px 0 20px -5px rgba(115, 115, 115, 0.75);
-	transition: all 0.5s ease-in-out;
+	transition: all 1s ease-in-out;
 }
 
 .topLink {
