@@ -46,9 +46,11 @@ export default function AllPokemon({ pokemon }) {
             placeholder="Search Pokemon"
             value={query}
           ></input>
-          {pokemonToRender.map((i) => {
-            return <Pokemon key={i.name} name={i.name} type={i.types[0].type.name} img={i.sprites.front_default} />;
-          })}
+          <div className={styles.pokemonContainer}>
+            {pokemonToRender.map((i) => {
+              return <Pokemon key={i.name} name={i.name} type={i.types[0].type.name} img={i.sprites.front_default} />;
+            })}
+          </div>
           <div className={styles.footer}>
             <Footer />
           </div>

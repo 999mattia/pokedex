@@ -14,3 +14,11 @@
 .searchbar:focus {
   border: none;
 }
+
+.pokemonContainer {
+  display: flex;
+  justify-content: space-around;
+  gap: 4em;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
