@@ -14,11 +14,10 @@
 	padding-top: 1.5rem;
 }
 
-.pokeball {
-	width: 100px;
+.link {
 	cursor: pointer;
 }
-
-.link {
+.pokeball {
+	width: 100px;
 	cursor: pointer;
 }

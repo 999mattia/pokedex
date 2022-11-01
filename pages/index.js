@@ -11,7 +11,7 @@ export default function Home({ }) {
 			</Head>
 			<div className={styles.container}>
 				<center>
-					<h1>Pokedex</h1>
+					<h1>Welcome to Pokedex</h1>
 					<h2>Click the pokeball in the header to acces the menu</h2>
 				</center>
 				<div className={styles.footer}>

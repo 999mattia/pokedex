@@ -9,9 +9,10 @@ export default function Contact() {
                 <title>Pokedex | Contact</title>
             </Head>
             <center>
-                <h2>Contact</h2>
+                <h2>Contact and Impressum</h2>
                 <div className={styles.footer}>
-                    <Footer /></div>
+                    <Footer />
+                </div>
             </center>
         </>
     )
