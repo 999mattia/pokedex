@@ -11,13 +11,36 @@ const defaultModel = {
 
 export default function Contact() {
     const [mail, setMail] = useState(defaultModel)
+    const [error, setError] = useState("")
 
     const sendEmail = async () => {
-        const res = await fetch("/api/mail", {
-            method: "POST",
-            body: JSON.stringify(mail)
-        })
-        setMail(defaultModel)
+        if (checkInput()) {
+            const res = await fetch("/api/mail", {
+                method: "POST",
+                body: JSON.stringify(mail)
+            })
+            setMail(defaultModel)
+        } else {
+            return
+        }
+    }
+
+    const checkInput = () => {
+        if (mail.name.length < 3) {
+            setError("Enter a name")
+            return false
+        } else if (mail.email.length < 3) {
+            setError("Enter a valid email address")
+            return false
+        } else if (!mail.email.includes("@")) {
+            setError("Enter a valid email address")
+            return false
+        } else if (mail.text.length < 1) {
+            setError("Enter a text")
+            return false
+        } else {
+            return true
+        }
     }
 
     const handleChange = (e) => {
@@ -28,6 +51,7 @@ export default function Contact() {
             ...mail,
             [name]: value,
         });
+        setError("")
     };
 
     return (
@@ -54,6 +78,10 @@ export default function Contact() {
 
                 <button className={styles.btn} onClick={() => sendEmail()}>Send message</button>
 
+                {error.length > 0 && <div className={styles.error}>
+                    {error}
+                </div>}
+
                 <h2>Impressum</h2>
 
                 <h3>Pokedex</h3>
@@ -67,6 +95,10 @@ export default function Contact() {
                 <div>
                     <p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen. Alle Angebote sind unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</p>
                 </div>
+
+                <h2>
+                    Big Thanks to PokeApi (https://pokeapi.co/) for providing the data about the pokemon!
+                </h2>
                 <div className={styles.footer}>
                     <Footer />
                 </div>
