@@ -1,8 +1,23 @@
-.filler {
-  height: 75vh;
+.input {
+	margin-bottom: 2rem;
+	width: 15rem;
+	height: 2.5rem;
+	border-radius: 5px;
+	background-color: transparent;
+	color: black;
+	border: none;
+	box-shadow: 0 10px 20px -5px rgba(115, 115, 115, 0.75),
+		-10px 0 20px -5px rgba(115, 115, 115, 0.75);
 }
 
-.footer {
-  position: absolute;
-  bottom: 0px;
+.btn {
+	margin-bottom: 2rem;
+	width: 15rem;
+	height: 2.5rem;
+	border-radius: 5px;
+	background-color: transparent;
+	color: black;
+	border: none;
+	box-shadow: 0 10px 20px -5px rgba(115, 115, 115, 0.75),
+		-10px 0 20px -5px rgba(115, 115, 115, 0.75);
 }

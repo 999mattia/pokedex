@@ -40,19 +40,19 @@ export default function Contact() {
 
                 <form>
                     <div>
-                        <input type="text" placeholder="Full name..." name="name" onChange={handleChange} value={mail.name} />
+                        <input className={styles.input} type="text" placeholder="Full name..." name="name" onChange={handleChange} value={mail.name} />
                     </div>
 
                     <div>
-                        <input type="text" placeholder="E-Mail..." name="email" onChange={handleChange} value={mail.email} />
+                        <input className={styles.input} type="text" placeholder="E-Mail..." name="email" onChange={handleChange} value={mail.email} />
                     </div>
 
                     <div>
-                        <input type="text" placeholder="Text..." name="text" onChange={handleChange} value={mail.text} />
+                        <input className={styles.input} type="text" placeholder="Text..." name="text" onChange={handleChange} value={mail.text} />
                     </div>
                 </form>
 
-                <button onClick={() => sendEmail()}>Send message</button>
+                <button className={styles.btn} onClick={() => sendEmail()}>Send message</button>
 
                 <h2>Impressum</h2>
 
@@ -64,8 +64,9 @@ export default function Contact() {
                 <h4>3013 Bern</h4>
 
                 <h4>Haftungsausschluss</h4>
-                <p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen. Alle Angebote sind unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</p>
-
+                <div>
+                    <p>Der Autor übernimmt keinerlei Gewähr hinsichtlich der inhaltlichen Richtigkeit, Genauigkeit, Aktualität, Zuverlässigkeit und Vollständigkeit der Informationen. Haftungsansprüche gegen den Autor wegen Schäden materieller oder immaterieller Art, welche aus dem Zugriff oder der Nutzung bzw. Nichtnutzung der veröffentlichten Informationen, durch Missbrauch der Verbindung oder durch technische Störungen entstanden sind, werden ausgeschlossen. Alle Angebote sind unverbindlich. Der Autor behält es sich ausdrücklich vor, Teile der Seiten oder das gesamte Angebot ohne gesonderte Ankündigung zu verändern, zu ergänzen, zu löschen oder die Veröffentlichung zeitweise oder endgültig einzustellen.</p>
+                </div>
                 <div className={styles.footer}>
                     <Footer />
                 </div>
