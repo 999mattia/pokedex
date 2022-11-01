@@ -13,7 +13,7 @@ export default function Pokemon({ name, type, img }) {
                 < br />
                 {type}
                 < br />
-                <img src={img} />
+                <img img="Image of the pokemon" src={img} />
             </div >
         </Link>
     )

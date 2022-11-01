@@ -5,7 +5,7 @@ export default function Loader() {
         <div className={styles.container}>
             <div className={styles.text}>
 
-                <img src="/pokeball.svg" className={styles.pokeball} />
+                <img alt="pokeball" src="/pokeball.svg" className={styles.pokeball} />
 
             </div>
         </div >
