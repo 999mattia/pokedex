@@ -10,9 +10,9 @@ export default function Pokemon({ name, type, img }) {
         <Link href={`/pokemon/${name}`}>
             <div className={styles.container} style={{ borderColor: color }}>
                 {name}
-                < br />
+                <br />
                 {type}
-                < br />
+
                 <img img="Image of the pokemon" src={img} />
             </div >
         </Link>

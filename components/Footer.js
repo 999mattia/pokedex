@@ -4,9 +4,7 @@ import Link from "next/link"
 export default function Footer() {
     return (
         <div className={styles.container}>
-            <center>
-                <Link href="/contact">Contact and Impressum</Link>
-            </center>
+            <Link href="/contact">Contact and Impressum</Link>
         </div>
     )
 }

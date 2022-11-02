@@ -25,7 +25,7 @@ export default function PokemonDetails({ pokemon }) {
 
     return (<>
         {pokemon ?
-            <center><div className={styles.container} style={{ borderColor: color }}><h2>{pokemon.name}</h2> <h4>type: {pokemon.types[0].type.name}</h4> <h4>height: {pokemon.height}</h4> <h4>weight: {pokemon.weight}</h4>
+            <div className={styles.container} style={{ borderColor: color }}><h2>{pokemon.name}</h2> <h4>type: {pokemon.types[0].type.name}</h4> <h4>height: {pokemon.height}</h4> <h4>weight: {pokemon.weight}</h4>
                 {image == 1 ? <a onClick={() => changeImage()}>
                     <img img="Front image of the pokemon" src={pokemon.sprites.front_default} className={styles.img} />
                     <p className="front"></p>
@@ -34,7 +34,7 @@ export default function PokemonDetails({ pokemon }) {
                     <p className="back"></p>
                 </a>}
                 (Click on image to switch image)
-            </div></center> : null}</>)
+            </div> : null}</>)
 }
 
 export const getStaticPaths = async () => {

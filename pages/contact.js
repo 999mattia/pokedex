@@ -59,7 +59,7 @@ export default function Contact() {
             <Head>
                 <title>Pokedex | Contact and Impressum</title>
             </Head>
-            <center>
+            <div className={styles.container}>
                 <h2>Contact</h2>
 
                 <form>
@@ -99,10 +99,10 @@ export default function Contact() {
                 <h2>
                     Big Thanks to PokeApi (https://pokeapi.co/) for providing the data about the pokemon!
                 </h2>
-                <div className={styles.footer}>
-                    <Footer />
-                </div>
-            </center>
+            </div>
+            <div className={styles.footer}>
+                <Footer />
+            </div>
         </>
     )
 }

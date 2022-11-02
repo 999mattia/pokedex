@@ -10,10 +10,8 @@ export default function Home({ }) {
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
 			<div className={styles.container}>
-				<center>
-					<h1>Welcome to Pokedex</h1>
-					<h2>Click the pokeball in the header to acces the menu</h2>
-				</center>
+				<h1>Welcome to Pokedex</h1>
+				<h2>Click the pokeball in the header to acces the menu</h2>
 				<div className={styles.footer}>
 					<Footer />
 				</div>
