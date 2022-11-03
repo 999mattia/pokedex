@@ -6,3 +6,17 @@
 	position: absolute;
 	bottom: 0px;
 }
+
+.imgContainer {
+	height: 50vh;
+	margin-top: 3rem;
+}
+
+.img {
+	height: 100%;
+	width: auto;
+	border-radius: 15px;
+	box-shadow: 0 10px 20px -5px rgba(115, 115, 115, 0.75),
+		-10px 0 20px -5px rgba(115, 115, 115, 0.75);
+	cursor: pointer;
+}

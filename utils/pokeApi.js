@@ -17,3 +17,9 @@ export async function getByName(name) {
     const data = await res.json()
     return data
 }
+
+export async function getById(id) {
+    const res = await fetch(`https://pokeapi.co/api/v2/pokemon/${id}`)
+    const data = await res.json()
+    return data
+}
