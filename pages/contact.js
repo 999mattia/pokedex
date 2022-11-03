@@ -12,6 +12,7 @@ const defaultModel = {
 export default function Contact() {
     const [mail, setMail] = useState(defaultModel)
     const [error, setError] = useState("")
+    const [success, setSuccess] = useState(false)
 
     const sendEmail = async () => {
         if (checkInput()) {
@@ -19,6 +20,7 @@ export default function Contact() {
                 method: "POST",
                 body: JSON.stringify(mail)
             })
+            setSuccess(true)
             setMail(defaultModel)
         } else {
             return
@@ -52,6 +54,7 @@ export default function Contact() {
             [name]: value,
         });
         setError("")
+        setSuccess(false)
     };
 
     return (
@@ -81,6 +84,9 @@ export default function Contact() {
                 {error.length > 0 && <div className={styles.error}>
                     {error}
                 </div>}
+
+                {success && <div className={styles.success}
+                >Email sent!</div>}
 
                 <h2>Impressum</h2>
 
